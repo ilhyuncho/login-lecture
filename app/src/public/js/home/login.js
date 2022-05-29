@@ -13,6 +13,15 @@ function login(){
         psword: password.value,
     };
     
+    if(!id.value)
+    {
+        return alert("아이디를 입력해 주세에");
+    }
+    if(!psword.value)
+    {
+        return alert("비밀번호를 입력해 주세요");
+    }
+
     fetch("/login",{
         method: "POST",
         headers: {
@@ -26,6 +35,7 @@ function login(){
             location.href = "/";
         }
         else{
+            if(res.err) return alert(res.err);
             alert(res.msg);
         }
     })

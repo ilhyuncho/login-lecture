@@ -18,13 +18,13 @@ class User{
                     return { success: true};
                 }
                 else{
-                    return {success:false, msg: "비밀번호1가 틀렸습니다."};
+                    return {success:false, msg: "비밀번호가 틀렸습니다."};
                 }
             }
             return {success:false, msg: "존재하지 않는 아이디입니다."};
         }
         catch(err){
-            const a = {success:false, msg:err};
+            const a = {success:false, err};
             return a;
         }
         
@@ -37,7 +37,7 @@ class User{
             return response;
         }
         catch(err){
-            const a = {success:false, msg:err};
+            const a = {success:false, err:err};
             return a;
         }
     }
